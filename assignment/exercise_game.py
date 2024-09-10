@@ -9,7 +9,7 @@ import json
 
 
 curl -X PUT -d '{ "first": "Jack", "last": "Sparrow" }' \
-  'https://ec463-mini-project-73ad2-default-rtdb.firebaseio.com/.json'
+  'https://ec463-mini-project-73ad2-default-rtdb.firebaseio.com/users/jack/name.json'
 
 N: int = 10
 sample_ms = 10.0
