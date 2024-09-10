@@ -64,6 +64,7 @@ def scorer(t: list[int | None]) -> None:
         "average": sum(t_good) / len(t_good),
         "score": 1 - misses / len(t),
     }
+    print(data)
 
     # %% make dynamic filename and write JSON
 
