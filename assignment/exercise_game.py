@@ -8,7 +8,7 @@ import random
 import json
 
 
-N: int = 3
+N: int = 10
 sample_ms = 10.0
 on_ms = 500
 
@@ -64,6 +64,7 @@ def scorer(t: list[int | None]) -> None:
         "average": sum(t_good) / len(t_good),
         "score": 1 - misses / len(t),
     }
+    
     print(data)
 
     # %% make dynamic filename and write JSON
