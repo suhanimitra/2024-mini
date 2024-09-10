@@ -7,17 +7,9 @@ import time
 import random
 import json
 
-import firebase_admin
-from firebase_admin import firestore
 
-# Application Default credentials are automatically created.
-app = firebase_admin.initialize_app()
-db = firestore.client()
-
-doc_ref = db.collection("game data").document("alovelace")
-doc_ref.set({"first": "Ada", "last": "Lovelace", "born": 1815})
-
-
+curl -X PUT -d '{ "first": "Jack", "last": "Sparrow" }' \
+  'https://ec463-mini-project-73ad2-default-rtdb.firebaseio.com/.json'
 
 N: int = 10
 sample_ms = 10.0
