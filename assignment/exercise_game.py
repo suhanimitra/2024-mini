@@ -8,7 +8,7 @@ import random
 import json
 
 
-N: int = 10
+N: int = 3
 sample_ms = 10.0
 on_ms = 500
 
