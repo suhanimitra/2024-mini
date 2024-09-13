@@ -24,14 +24,19 @@ def playtone(frequency: float, duration: float) -> None:
 def quiet():
     speaker.duty_u16(0)
 
+
+# Please note this was found through the following link:
+# https://wokwi.com/projects/374780001869638657
+# Then modified to fit the format of this program
+
 notes = {
     'C4': 261,
-    'D4': 294,
+    'D4': 293,
     'E4': 329,
     'F4': 349,
     'G4': 392,
     'A4': 440,
-    'B4': 493,
+    'B4': 466,
     'C5': 523
 }
 

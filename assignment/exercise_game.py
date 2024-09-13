@@ -6,15 +6,13 @@ from machine import Pin
 import time
 import random
 import json
-
-
-curl -X PUT -d '{ "first": "Jack", "last": "Sparrow" }' \
-  'https://ec463-mini-project-73ad2-default-rtdb.firebaseio.com/users/jack/name.json'
+import requests
+import network   # handles connecting to WiFi
+import urequests # handles making and servicing network requests
 
 N: int = 10
 sample_ms = 10.0
 on_ms = 500
-
 
 def random_time_interval(tmin: float, tmax: float) -> float:
     """return a random time interval between max and min"""
@@ -67,7 +65,7 @@ def scorer(t: list[int | None]) -> None:
         "average": sum(t_good) / len(t_good),
         "score": 1 - misses / len(t),
     }
-    
+
     print(data)
 
     # %% make dynamic filename and write JSON
@@ -79,7 +77,24 @@ def scorer(t: list[int | None]) -> None:
 
     print("write", filename)
 
-    write_json(filename, data)
+    # write_json(filename, data)
+
+    # Connection code from: https://core-electronics.com.au/guides/raspberry-pi-pico-w-connect-to-the-internet/
+    # Connect to network
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+
+    # Fill in your network name (ssid) and password here:
+    ssid = 'Suhani'
+    print(ssid)
+    password = '****' #omitted for security purposes
+    wlan.connect(ssid, password)
+
+    url = f"https://ec463miniprojectv2-default-rtdb.firebaseio.com/{filename}"
+    response = requests.post(url, json=data)
+
+    print(response.status_code)  # Status code of the response
+    print(response.text)  # The response content (if any)
 
 
 if __name__ == "__main__":
