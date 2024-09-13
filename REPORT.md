@@ -5,6 +5,7 @@
 1. What are the "max_bright" and "min_bright" values you found?
 
    The value for "max_bright" was 53600 and the value for "min_bright" was 460.
+   
    [Link to Pi running exercise_light.py, light values changing on Thonny based on extreme (light/dark) exposure](https://drive.google.com/file/d/1lmQHyUK9U_8Z4o5gfOX9NQN8-uoS1qvC/view?usp=sharing).
     
 
