@@ -63,7 +63,7 @@ def scorer(t: list[int | None]) -> None:
         "minimum": min(t_good),
         "maximum": max(t_good),
         "average": sum(t_good) / len(t_good),
-        "score": len(t) - misses / len(t),
+        "score": 1 - misses / len(t),
     }
 
     print(data)
