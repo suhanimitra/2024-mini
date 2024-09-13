@@ -87,7 +87,7 @@ def scorer(t: list[int | None]) -> None:
     # Fill in your network name (ssid) and password here:
     ssid = 'Suhani'
     print(ssid)
-    password = 'suhanim20'
+    password = '****' #omitted for security purposes
     wlan.connect(ssid, password)
 
     url = f"https://ec463miniprojectv2-default-rtdb.firebaseio.com/{filename}"
